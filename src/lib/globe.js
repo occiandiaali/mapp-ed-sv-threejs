@@ -127,6 +127,8 @@ export function createGlobe(container) {
   labelRenderer.domElement.style.left = "0";
   labelRenderer.domElement.style.width = "100%";
   labelRenderer.domElement.style.height = "100%";
+  labelRenderer.domElement.style.color = "#ffffff";
+  labelRenderer.domElement.style.zIndex = "0";
   // IMPORTANT: allow pointer events so OrbitControls still work
   labelRenderer.domElement.style.pointerEvents = "auto";
 
@@ -168,14 +170,17 @@ export function createGlobe(container) {
     div.textContent = name;
     div.style.pointerEvents = "auto";
     div.style.cursor = "pointer";
+    div.style.color = "#ffff00";
 
     const label = new CSS2DObject(div);
+    // console.log("Label ", JSON.stringify(label));
+    // console.log("Div ", JSON.stringify(div.textContent));
     label.position.copy(latLongToVector3(lat, lon));
     globe.add(label);
     markers.push(label);
 
     div.addEventListener("click", () => {
-      console.log("Clicked marker: ", name);
+      // console.log("Clicked marker: ", name);
       if (onClick) onClick(name);
     });
   }
