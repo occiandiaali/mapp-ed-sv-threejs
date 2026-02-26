@@ -25,7 +25,7 @@
         
       })
       
-    }, 3000);
+    }, 2000);
     
     globe.addMarker(country.name.common, country.latlng[0], country.latlng[1], async (name) => {
       countryData = await fetchCountry(name);
