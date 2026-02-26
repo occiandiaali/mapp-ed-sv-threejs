@@ -80,17 +80,18 @@
   input {
     padding: 6px;
   }
-  #globe { width: 100vw; height: 100vh; }
+  /* #globe { width: 100vw; height: 100vh; } */
+   #globe {  width: 94vw; height: 94vh; }
 
   #ui {
-    position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
+    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
     background: rgba(255,255,255,0.3); padding: 10px; border-radius: 6px;
   }
 
   #logo-div {
     position: absolute;
     top: 5%;
-    left: 2%;
+    left: 5%;
     z-index: 9998;
   }
   /* #logo-div img:hover {
@@ -137,10 +138,11 @@
   }
 
 @media (max-width: 600px) {
+  #globe { width: 100vw; height: 100vh; }
     #logo-div {
     position: absolute;
-    top: 3%;
-    left: 7%;
+    top: 5%;
+    left: 10%;
   }
 }
 </style>
