@@ -25,7 +25,7 @@
         
       })
       
-    }, 2000);
+    }, 1000);
     
     globe.addMarker(country.name.common, country.latlng[0], country.latlng[1], async (name) => {
       countryData = await fetchCountry(name);
@@ -162,6 +162,7 @@
   <div class="modal-overlay">
     <div class="modal">
       <h2>{countryData.name.common}</h2>
+      <img src={countryData.flags.png} alt={countryData.flag} width="80px" height="80px" />
       <p><strong>Capital:</strong> {countryData.capital?.[0] || 'N/A'}</p>
       <p><strong>Region:</strong> {countryData.region}</p>
       <p><strong>Subregion:</strong> {countryData.subregion}</p>
@@ -170,7 +171,7 @@
 
        <p><strong>Currency:</strong> {Object.values(countryData.currencies).map(v => v.name)} ({Object.values(countryData.currencies).map(v => v.symbol)})</p>
       
-       <p><strong>Flag:</strong> <img src={countryData.flags.png} alt={countryData.flag} width="28px" height="24px" /></p>
+       <!-- <p><strong>Flag:</strong> <img src={countryData.flags.png} alt={countryData.flag} width="28px" height="24px" /></p> -->
       <button onclick={() => showDialog = false}>Close</button>
     </div>
   </div>
