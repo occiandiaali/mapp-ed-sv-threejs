@@ -16,7 +16,7 @@
 
   async function pinCountry() {
     if (!countryInput) return;
-    const country = await fetchCountry(countryInput);
+    const country = await fetchCountry(countryInput.trim());
     if (!country) return alert('Country not found');
     setTimeout(() => {
       fetchCountry(country.name.common).then((data) => {
@@ -92,7 +92,13 @@
     position: absolute;
     top: 5%;
     left: 5%;
-    z-index: 9998;
+    z-index: 9999;
+  }
+  #logo {
+        position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 9999;
   }
   /* #logo-div img:hover {
     cursor: pointer;
@@ -143,12 +149,14 @@
     position: absolute;
     top: 5%;
     left: 10%;
+    
   }
+  #logo {z-index: 9999;}
 }
 </style>
 
 <div id="logo-div">
-  <img src="logo.svg" alt="Mapp-Ed" title="Mapp-Ed | Countries of Earth" width="32px" height="32px" />
+  <img id="logo" src="/logo.svg" alt="Mappin" title="Mappin | Countries of Earth" width="32px" height="32px" />
 </div>
 <div id="globe"></div>
 
